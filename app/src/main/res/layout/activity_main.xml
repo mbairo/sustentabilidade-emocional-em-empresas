@@ -8,7 +8,7 @@
     android:background="@color/black">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_pergunta"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -53,7 +53,7 @@
         android:layout_marginEnd="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView_pergunta"
         app:srcCompat="@drawable/img_qrcode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

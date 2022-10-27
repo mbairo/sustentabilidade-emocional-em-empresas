@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/duvida" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_pergunta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_pergunta" />
 
     <!-- Muito Feliz   -->
     <ImageView
@@ -168,6 +168,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_rating"
         app:srcCompat="@drawable/ratingbar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_alerta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/btn_arredondado"
+        android:text="TextView"
+        android:gravity="center"
+        android:visibility="invisible"
+        style="@style/alerta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
