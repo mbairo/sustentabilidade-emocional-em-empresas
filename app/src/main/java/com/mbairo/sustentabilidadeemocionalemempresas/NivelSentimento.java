@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Set;
+
 public class NivelSentimento extends AppCompatActivity {
     private ImageView imageView_duvidas, muito_feliz_empty, muito_feliz_full, feliz_empty, feliz_full, meio_chateado_empty, meio_chateado_full, triste_empty, triste_full, muito_triste_empty, muito_triste_full;
     private TextView textView_pergunta_do_dia, textView_dicas_de_saude;
@@ -20,53 +22,39 @@ public class NivelSentimento extends AppCompatActivity {
         getSupportActionBar().hide();
         InstanciarElementos();
 
+        // Emojis
         muito_feliz_empty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                feliz_full.setVisibility(View.INVISIBLE);
-                meio_chateado_full.setVisibility(View.INVISIBLE);
-                triste_full.setVisibility(View.INVISIBLE);
-                muito_triste_full.setVisibility(View.INVISIBLE);
+                SetInvisible();
                 muito_feliz_full.setVisibility(View.VISIBLE);
             }
         });
         feliz_empty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                muito_feliz_full.setVisibility(View.INVISIBLE);
-                meio_chateado_full.setVisibility(View.INVISIBLE);
-                triste_full.setVisibility(View.INVISIBLE);
-                muito_triste_full.setVisibility(View.INVISIBLE);
+                SetInvisible();
                 feliz_full.setVisibility(View.VISIBLE);
             }
         });
         meio_chateado_empty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                muito_feliz_full.setVisibility(View.INVISIBLE);
-                triste_full.setVisibility(View.INVISIBLE);
-                muito_triste_full.setVisibility(View.INVISIBLE);
-                feliz_full.setVisibility(View.INVISIBLE);
+                SetInvisible();
                 meio_chateado_full.setVisibility(View.VISIBLE);
             }
         });
         triste_empty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                muito_feliz_full.setVisibility(View.INVISIBLE);
-                muito_triste_full.setVisibility(View.INVISIBLE);
-                feliz_full.setVisibility(View.INVISIBLE);
-                meio_chateado_full.setVisibility(View.INVISIBLE);
+                SetInvisible();
                 triste_full.setVisibility(View.VISIBLE);
             }
         });
         muito_triste_empty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                muito_feliz_full.setVisibility(View.INVISIBLE);
-                feliz_full.setVisibility(View.INVISIBLE);
-                meio_chateado_full.setVisibility(View.INVISIBLE);
-                triste_full.setVisibility(View.INVISIBLE);
+                SetInvisible();
                 muito_triste_full.setVisibility(View.VISIBLE);
             }
         });
@@ -75,7 +63,6 @@ public class NivelSentimento extends AppCompatActivity {
         imageView_duvidas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(NivelSentimento.this, DuvidasEProblemas.class);
                 startActivity(intent);
                 finish();
@@ -86,7 +73,6 @@ public class NivelSentimento extends AppCompatActivity {
         textView_pergunta_do_dia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(NivelSentimento.this, PerguntaDoDia.class);
                 startActivity(intent);
                 finish();
@@ -97,13 +83,11 @@ public class NivelSentimento extends AppCompatActivity {
         textView_dicas_de_saude.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(NivelSentimento.this, DicasDeSaude.class);
                 startActivity(intent);
                 finish();
             }
         });
-
     }
 
     public void InstanciarElementos () {
@@ -125,5 +109,13 @@ public class NivelSentimento extends AppCompatActivity {
 
         muito_triste_empty = findViewById(R.id.img_muito_triste_empty);
         muito_triste_full = findViewById(R.id.img_muito_triste_full);
+    }
+
+    public void SetInvisible(){
+        muito_feliz_full.setVisibility(View.INVISIBLE);
+        feliz_full.setVisibility(View.INVISIBLE);
+        meio_chateado_full.setVisibility(View.INVISIBLE);
+        triste_full.setVisibility(View.INVISIBLE);
+        muito_triste_full.setVisibility(View.INVISIBLE);
     }
 }
